@@ -1,5 +1,6 @@
-import async_sendgrid
 import httpx
+
+import simple_sendgrid
 
 
 class AsyncClient:
@@ -32,7 +33,7 @@ class AsyncClient:
         self.host = host
         self.session = session
         self.timeout = timeout
-        self.version = async_sendgrid.__version__
+        self.version = simple_sendgrid.__version__
         self.useragent = 'async_sendgrid/{};python'.format(self.version)
         self.headers = {
             "Authorization": f"Bearer {api_key}",
